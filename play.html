@@ -8,9 +8,9 @@ var audio4 = new Audio('4.mp3');
 var audio5 = new Audio('5.mp3');
 
 function play() {
-	if ((audio.duration > 0 && !audio.paused) && num != 3 && num != 4){
-		// audio palying
-	} else {
+	// if ((audio.duration > 0 && !audio.paused) && num != 3 && num != 4){
+	// 	// audio palying
+	// } else {
 		// not playing
 		audio = new Audio(num + '.mp3');
 		audio.play();
@@ -18,7 +18,7 @@ function play() {
 		num += 1;
 		if(num == 6)
 			num = 1;
-	}
+	// }
 }
 
 let char = ' ';
