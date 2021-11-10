@@ -1,0 +1,89 @@
+<script>
+let num = 1;
+var audio = new Audio(num + '.mp3');
+
+function play() {
+	if ((audio.duration > 0 && !audio.paused) && num != 3 && num != 4){
+		// audio palying
+	} else {
+		// not playing
+		audio = new Audio(num + '.mp3');
+		audio.play();
+
+		num += 1;
+		if(num == 6)
+			num = 1;
+	}
+}
+
+let char = ' ';
+
+function playKey(key) {
+	console.log(String.fromCharCode(key.keyCode).toLowerCase());
+	char = String.fromCharCode(key.keyCode).toLowerCase();
+
+	switch(char) {
+	  case '1':
+	  case '2':
+	  case '3':
+	  case '4':
+	  case '5':
+	  case '6':
+	  case '7':
+	  case '8':
+	  case '9':
+	  case '0':
+	    audio = new Audio('1.mp3');
+	    audio.play();
+	    break;
+	  case 'q':
+	  case 'w':
+	  case 'e':
+	  case 'r':
+	  case 't':
+	  case 'y':
+	  case 'u':
+	  case 'i':
+	  case 'o':
+	  case 'p':
+	    audio = new Audio('2.mp3');
+	    audio.play();
+	    break;
+	  case 'a':
+	  case 's':
+	  case 'd':
+	  case 'f':
+	  case 'g':
+	  case 'h':
+	  case 'j':
+	  case 'k':
+	  case 'l':
+	    audio = new Audio('3.mp3');
+	    audio.play();
+	    break;
+	  case 'z':
+	  case 'x':
+	  case 'c':
+	  case 'v':
+	  case 'b':
+	  case 'n':
+	  case 'm':
+	    audio = new Audio('4.mp3');
+	    audio.play();
+	    break;
+	  case ' ':
+	    audio = new Audio('5.mp3');
+	    audio.play();
+	  break;
+	  default:
+	    // code block
+	} 
+}
+
+document.onkeydown = function(evt) {
+    playKey(evt);
+};
+
+</script>
+
+<!-- <button onclick="play()">Play Audio</button> -->
