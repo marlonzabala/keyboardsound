@@ -89,6 +89,11 @@ document.onkeydown = function(evt) {
     playKey(evt);
 };
 
+document.onmousedown = function (event) {
+  if (!event) {event = window.event;}
+	  play();
+};
+
 </script>
 
 <!-- <button onclick="play()">Play Audio</button> -->
